@@ -13,7 +13,7 @@ const elements = {
 
 const { breedSelect, loader, error, catInfo } = elements;
 handlerBars()
-function handlerBars(e) {
+function handlerBars() {
   fetchBreeds()
   .then(data => {
     let markup = data.map(({name,id}) => `<option value="${id}">${name}</option>`)
