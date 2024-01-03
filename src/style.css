@@ -59,11 +59,34 @@
  }
 
 .breed-select {
+  margin-bottom: 10px;
   max-width: 500px;
 }
 
 img { 
   display: block;
   max-width: 500px;
-  max-height: 500px;
+  height: 500px;
+  border-radius: 10px;
+}
+.cat {
+  display: flex;
+
+}
+.cat__descriotion {
+  margin-left: 19px;
+}
+.cat__descriotion > h2 {
+  font-size: 40px;
+  margin-bottom: 20px;
+  font-family: cursive;
+}
+.cat__descriotion > p {
+  font-size: 22px;
+  max-width: 700px ;
+  margin-bottom: 20px;
+  font-family: cursive;
+}
+.cat_span {
+  font-weight: bold;
 }

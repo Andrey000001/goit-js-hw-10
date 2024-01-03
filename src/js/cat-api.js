@@ -1,6 +1,6 @@
-
+import { elements } from "..";
 const BASE_URL = 'https://api.thecatapi.com/v1';
-const API_KEY = '735d4d71-053d-4f32-ab81-0a246842519a';
+const API_KEY = 'live_s0ShbLuiW1I81vNeG6UIA9KxAjdj14rokaExbfrrehoYvnP9qDq1HpMbzIF64xk8'
 
 
 function fetchBreeds() {
@@ -14,7 +14,7 @@ function fetchBreeds() {
 }
 
 function fetchCatByBreed(breedId) {
-  return fetch(`${BASE_URL}/images/search?api_key${API_KEY}&breed_ids=${breedId}`)
+  return fetch(`${BASE_URL}/images/search?api_key=${API_KEY}&breed_ids=${breedId}`)
   .then(response => {
     if(!response.ok) {
       throw new Error(response.status)

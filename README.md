@@ -100,3 +100,4 @@ Pages, в ветку `gh-pages`, каждый раз когда обновляе
 
 
 
+name,life_span,temperament ,weight: {metric}
