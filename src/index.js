@@ -1,9 +1,7 @@
-import { Notify } from 'notiflix';
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
 import '../src/style.css';
-import { load } from 'npm';
 
 export const elements = {
   breedSelect: document.querySelector('.breed-select'),
@@ -32,7 +30,7 @@ function handlerBars() {
       });
       loader.style.display = 'none';
     })
-    .catch(error => {
+    .catch((error) => {
       loader.textContent = 'Opps! Something went wrond! Try reloading the page.'
       loader.style.display = 'none',
       error
@@ -54,7 +52,7 @@ function handleBreadChange(event) {
         loader.style.display = 'none';
         loader.textContent = '';
       } else {
-        ('По данному запросу ничего не найдено');
+        console.log('По данному запросу ничего не найдено');
       }
     })
     .catch(error => {

@@ -65,7 +65,7 @@
 
 img { 
   display: block;
-  max-width: 500px;
+  width: 500px;
   height: 500px;
   border-radius: 10px;
 }
@@ -79,13 +79,13 @@ img {
 .cat__descriotion > h2 {
   font-size: 40px;
   margin-bottom: 20px;
-  font-family: cursive;
+  font-family: monospace;
 }
 .cat__descriotion > p {
   font-size: 22px;
   max-width: 700px ;
   margin-bottom: 20px;
-  font-family: cursive;
+  font-family: monospace;
 }
 .cat_span {
   font-weight: bold;
