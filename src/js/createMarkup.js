@@ -1,4 +1,5 @@
-import refs from './refs';
+import { elements } from './refs';
+const { catInfo } = elements;
 export default function createMarkupCat(catUrl, catInfoChoose) {
   const { description, name, life_span, temperament, weight } = catInfoChoose;
   const weightMetric = weight ? weight.metric : 'N/A';
@@ -14,5 +15,5 @@ export default function createMarkupCat(catUrl, catInfoChoose) {
     </article>
   </div>
   `;
-  refs.catInfo.innerHTML = markupInfoCat;
+  catInfo.innerHTML = markupInfoCat;
 }

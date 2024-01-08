@@ -2,11 +2,10 @@ import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
 import '../src/style.css';
 import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
-import refs from './js/refs';
+import { elements } from './js/refs';
 import createMarkupCat from './js/createMarkup';
 
-
-const { breedSelect, loader, error, catInfo } = refs;
+const { breedSelect, loader, error, catInfo } = elements;
 
 error.style.display = 'none';
 loader.style.display = 'none';
