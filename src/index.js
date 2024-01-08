@@ -1,16 +1,13 @@
 import SlimSelect from 'slim-select';
 import 'slim-select/dist/slimselect.css';
-import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
 import '../src/style.css';
+import { fetchBreeds, fetchCatByBreed } from './js/cat-api';
+import refs from './js/refs';
+import createMarkupCat from './js/createMarkup';
 
-export const elements = {
-  breedSelect: document.querySelector('.breed-select'),
-  loader: document.querySelector('.loader'),
-  error: document.querySelector('.error'),
-  catInfo: document.querySelector('.cat-info'),
-};
 
-const { breedSelect, loader, error, catInfo } = elements;
+const { breedSelect, loader, error, catInfo } = refs;
+
 error.style.display = 'none';
 loader.style.display = 'none';
 
@@ -30,10 +27,10 @@ function handlerBars() {
       });
       loader.style.display = 'none';
     })
-    .catch((error) => {
-      loader.textContent = 'Opps! Something went wrond! Try reloading the page.'
-      loader.style.display = 'none',
-      error
+    .catch(error => {
+      loader.textContent =
+        'Opps! Something went wrond! Try reloading the page.';
+      (loader.style.display = 'none'), error;
     });
 }
 
@@ -56,30 +53,15 @@ function handleBreadChange(event) {
       }
     })
     .catch(error => {
-      loader.textContent = 'Opps! Something went wrond! Try reloading the page.'
-      ,error})
+      (loader.textContent =
+        'Opps! Something went wrond! Try reloading the page.'),
+        error;
+    })
     .finally(() => {
       loader.style.display = 'none';
     });
 }
 
-function createMarkupCat(catUrl, catInfoChoose) {
-  const { description, name, life_span, temperament, weight } = catInfoChoose;
-  const weightMetric = weight ? weight.metric : 'N/A';
-  const markupInfoCat = `
-    <div class="cat">
-  <img src="${catUrl}" alt="${name}">
-  <article class="cat__descriotion">
-    <h2>${name}</h2>
-    <p>${description}</p> 
-    <p><span class="cat_span">Temperament:</span>  ${temperament}</p>
-    <p><span class="cat_span">Average life expectancy:</span> ${life_span}</p>
-    <p><span class="cat_span">Average weight:</span> ${weightMetric}</p>
-  </article>
-</div>
-`;
-  catInfo.innerHTML = markupInfoCat;
-}
 function clearContent() {
   catInfo.innerHTML = '';
 }
